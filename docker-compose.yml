@@ -1,0 +1,17 @@
+version: '3.9'
+services:
+  postgres:
+    container_name: postgres-container
+    image: postgres:13
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=exo2008
+      - POSTGRES_DB=feedback
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:
+    driver: local
